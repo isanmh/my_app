@@ -24,8 +24,10 @@ class _DasarPageState extends State<DasarPage> {
           color: Colors.purple,
         ),
         leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.apple),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
           color: Colors.purple,
         ),
         actions: [
