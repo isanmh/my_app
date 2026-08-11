@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_app/dasar/clip_rect.dart';
 import 'package:my_app/dasar/dasar_page.dart';
 import 'package:my_app/dasar/menu_page.dart';
+import 'package:my_app/dasar/root_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // routes
       routes: {
-        '/': (context) => const MenuPage(),
+        // '/': (context) => const MenuPage(),
+        '/': (context) => const RootPage(),
         '/dasar': (context) => const DasarPage(),
         '/clip': (context) => const ClipRectExample(),
       },

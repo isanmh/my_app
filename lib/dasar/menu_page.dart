@@ -10,6 +10,7 @@ class MenuPage extends StatelessWidget {
       appBar: AppBar(title: const Text("Menu Page")),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () {
