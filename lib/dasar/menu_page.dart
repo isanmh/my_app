@@ -1,0 +1,26 @@
+import 'package:flutter/material.dart';
+import 'package:my_app/dasar/dasar_page.dart';
+
+class MenuPage extends StatelessWidget {
+  const MenuPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              // cara 1 context no route
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const DasarPage()),
+              );
+            },
+            child: const Text("Dasar Page"),
+          ),
+          ElevatedButton(onPressed: () {}, child: const Text("ClipRect")),
+        ],
+      ),
+    );
+  }
+}

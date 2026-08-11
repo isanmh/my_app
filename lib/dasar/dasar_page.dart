@@ -69,7 +69,9 @@ class _DasarPageState extends State<DasarPage> {
               },
               child: Text("Elevated Button"),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.purple,
+                backgroundColor: (isCheck == false)
+                    ? Colors.purple
+                    : Colors.blue,
                 foregroundColor: Colors.white,
               ),
             ),
