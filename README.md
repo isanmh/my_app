@@ -1,3 +1,9 @@
+# Installasi Flutter 
+```
+flutter clean
+flutter pub get
+flutter run
+```
 # my_app
 
 A new Flutter project.
