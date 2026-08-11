@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/dasar/clip_rect.dart';
 import 'package:my_app/dasar/menu_page.dart';
 
 class RootPage extends StatefulWidget {
@@ -9,6 +10,11 @@ class RootPage extends StatefulWidget {
 }
 
 class _RootPageState extends State<RootPage> {
+  // ini untuk navbar
+  int currentPage = 0;
+  // widget list untuk navbar
+  List<Widget> pages = [MenuPage(), ClipRectExample()];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,10 +39,13 @@ class _RootPageState extends State<RootPage> {
           NavigationDestination(icon: Icon(Icons.search), label: 'Search'),
         ],
         onDestinationSelected: (index) {
-          // Handle destination selection
+          setState(() {
+            currentPage = index;
+          });
         },
+        selectedIndex: currentPage,
       ),
-      body: MenuPage(),
+      body: pages[currentPage],
     );
   }
 }

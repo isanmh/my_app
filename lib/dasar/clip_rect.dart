@@ -8,16 +8,12 @@ class ClipRectExample extends StatelessWidget {
     const TextStyle style = TextStyle(color: Colors.white);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("ClipRect Page"),
-        automaticallyImplyLeading: true,
-      ),
       body: Center(
         child: Column(
-          mainAxisAlignment: .spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
-              alignment: .center,
+              alignment: Alignment.center,
               constraints: const BoxConstraints(maxWidth: 200, maxHeight: 100),
               color: Colors.blue,
               child: const Text('No ClipRRect', style: style),
