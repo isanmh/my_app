@@ -1,0 +1,34 @@
+Cara Install Flutter di Windows :
+1. Unduh Flutter SDK:
+   - Kunjungi situs resmi Flutter di https://flutter.dev/docs/get-started/install/windows.
+   - Klik tombol "Download" untuk mengunduh file ZIP Flutter SDK.
+
+2. Ekstrak File ZIP:
+   - Setelah selesai mengunduh, ekstrak file ZIP ke lokasi yang diinginkan di
+
+    komputer Anda, misalnya di C:\flutter.
+
+3. Tambahkan Flutter ke PATH:
+   - Buka "Control Panel" > "System and Security" > "System" > "Advanced system settings" > "Environment Variables".
+   - Di bagian "System variables", cari variabel bernama "Path" dan klik "Edit".
+   - Klik "New" dan tambahkan path ke folder bin Flutter, misalnya C:\flutter\bin.
+
+4. Verifikasi Instalasi Flutter:
+   - Buka Command Prompt dan jalankan perintah `flutter doctor`.   
+
+    - Perintah ini akan memeriksa apakah semua dependensi yang diperlukan telah diinstal dan menampilkan status instalasi Flutter.
+
+Cara jalanin Flutter di Windows:
+1. Buka Command Prompt:
+   - Tekan tombol Windows + R, ketik "cmd", dan tekan Enter.    
+   - Arahkan ke direktori proyek Flutter Anda menggunakan perintah `cd`, misalnya `cd C:\path\to\your\flutter_project`.
+   - Jalankan perintah `flutter run` untuk menjalankan aplikasi Flutter di emulator atau perangkat yang terhubung.
+
+Extensi Flutter di Visual Studio Code:
+- Flutter
+- Dart
+- Prettier - Code formatter
+- Color Highlight
+- Path Intellisense
+- vscode-icons
+
