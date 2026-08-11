@@ -8,6 +8,10 @@ class DasarPage extends StatefulWidget {
 }
 
 class _DasarPageState extends State<DasarPage> {
+  // variable state
+  bool isSwitch = false;
+  bool? isCheck = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +50,7 @@ class _DasarPageState extends State<DasarPage> {
             Divider(color: Colors.black, height: 10),
             SizedBox(height: 10),
             Container(
-              color: Colors.blue,
+              color: isSwitch ? Colors.purple : Colors.blue,
               padding: EdgeInsets.all(40),
               child: Text(
                 "Text 1",
@@ -103,16 +107,20 @@ class _DasarPageState extends State<DasarPage> {
 
             // switch, checkbox
             Switch(
-              value: true,
-              onChanged: (value) {
-                print("Switch: $value");
+              value: isSwitch,
+              onChanged: (bool newValue) {
+                setState(() {
+                  isSwitch = newValue;
+                });
               },
             ),
             SizedBox(height: 10),
             Checkbox(
-              value: true,
-              onChanged: (value) {
-                print("Checkbox: $value");
+              value: isCheck,
+              onChanged: (bool? newValue) {
+                setState(() {
+                  isCheck = newValue;
+                });
               },
             ),
           ],
