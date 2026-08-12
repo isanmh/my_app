@@ -4,6 +4,7 @@ import 'package:my_app/dasar/dasar_page.dart';
 import 'package:my_app/dasar/menu_page.dart';
 import 'package:my_app/dasar/root_page.dart';
 import 'package:my_app/slicing/chatty/chatty_page.dart';
+import 'package:my_app/slicing/shoes/shoes_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       //   '/dasar': (context) => const DasarPage(),
       //   '/clip': (context) => const ClipRectExample(),
       // },
-      home: const ChattyPage(),
+      home: const ShoesPage(),
     );
   }
 }
