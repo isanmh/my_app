@@ -30,6 +30,14 @@ class ProductCard extends StatelessWidget {
               children: [
                 SizedBox(height: 20),
                 Text(
+                  "Hiking",
+                  style: secondaryTextStyle.copyWith(
+                    fontSize: 12,
+                    fontWeight: light,
+                  ),
+                ),
+                SizedBox(height: 6),
+                Text(
                   "TERREX URBAN LOW",
                   style: blackTextStyle.copyWith(
                     fontSize: 18,
@@ -37,14 +45,7 @@ class ProductCard extends StatelessWidget {
                   ),
                   maxLines: 1,
                 ),
-                SizedBox(height: 6),
-                Text(
-                  "Hiking",
-                  style: secondaryTextStyle.copyWith(
-                    fontSize: 12,
-                    fontWeight: light,
-                  ),
-                ),
+
                 SizedBox(height: 6),
                 Text(
                   "\$143,98",
