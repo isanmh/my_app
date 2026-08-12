@@ -7,6 +7,7 @@ class ChatTile extends StatelessWidget {
   final String name;
   final String message;
   final String time;
+  final bool unread; // untuk kondisi pesan
 
   const ChatTile({
     super.key,
@@ -14,6 +15,7 @@ class ChatTile extends StatelessWidget {
     required this.name,
     required this.message,
     required this.time,
+    required this.unread,
   });
 
   @override
@@ -31,7 +33,9 @@ class ChatTile extends StatelessWidget {
                 Text(name, style: titleTextStyle),
                 Text(
                   message,
-                  style: subTitleTextStyle,
+                  style: unread
+                      ? subTitleTextStyle.copyWith(color: greenColor)
+                      : subTitleTextStyle,
                   overflow: TextOverflow.ellipsis,
                 ),
               ],
