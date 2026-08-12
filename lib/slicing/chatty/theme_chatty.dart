@@ -10,3 +10,14 @@ Color greyColor = Color(0xff808BA2);
 Color greenColor = Color(0xff29CB9E);
 
 // Typography
+TextStyle titleTextStyle = TextStyle(
+  color: blackColor,
+  fontWeight: FontWeight.w500,
+  fontSize: 16,
+);
+
+TextStyle subTitleTextStyle = TextStyle(
+  color: greyColor,
+  fontWeight: FontWeight.w400,
+  fontSize: 14,
+);
