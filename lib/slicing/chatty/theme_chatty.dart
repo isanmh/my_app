@@ -8,3 +8,5 @@ Color lightBlueColor = Color(0xff9ED0FF);
 Color blackColor = Color(0xff2C3A59);
 Color greyColor = Color(0xff808BA2);
 Color greenColor = Color(0xff29CB9E);
+
+// Typography
