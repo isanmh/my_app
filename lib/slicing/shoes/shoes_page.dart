@@ -97,7 +97,7 @@ class ShoesPage extends StatelessWidget {
                 border: Border.all(color: secondaryColor),
               ),
               child: Text(
-                "Training",
+                "Basket",
                 style: secondaryTextStyle.copyWith(
                   fontSize: 13,
                   fontWeight: light,
@@ -113,29 +113,14 @@ class ShoesPage extends StatelessWidget {
                 border: Border.all(color: secondaryColor),
               ),
               child: Text(
-                "Training",
+                "Hiking",
                 style: secondaryTextStyle.copyWith(
                   fontSize: 13,
                   fontWeight: light,
                 ),
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(right: 16),
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: transparentColor,
-                border: Border.all(color: secondaryColor),
-              ),
-              child: Text(
-                "Training",
-                style: secondaryTextStyle.copyWith(
-                  fontSize: 13,
-                  fontWeight: light,
-                ),
-              ),
-            ),
+
             Container(
               margin: EdgeInsets.only(right: 16),
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
@@ -158,11 +143,22 @@ class ShoesPage extends StatelessWidget {
     );
   }
 
+  // popular Products
+  Widget popularProducts() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(defaultMargin, 30, defaultMargin, 0),
+      child: Text(
+        "Popular Products",
+        style: primaryTextStyle.copyWith(fontSize: 22, fontWeight: semiBold),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: ListView(children: [header(), categories()]),
+      body: ListView(children: [header(), categories(), popularProducts()]),
     );
   }
 }
