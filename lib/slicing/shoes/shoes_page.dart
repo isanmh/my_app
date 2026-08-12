@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_app/slicing/chatty/theme_chatty.dart';
 import 'package:my_app/slicing/shoes/theme_shoes.dart';
 import 'package:my_app/widgets/product_card.dart';
+import 'package:my_app/widgets/product_tile.dart';
 
 class ShoesPage extends StatelessWidget {
   const ShoesPage({super.key});
@@ -173,6 +174,25 @@ class ShoesPage extends StatelessWidget {
     );
   }
 
+  // New Arrivals
+  Widget newArrivalsTitle() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(defaultMargin, 30, defaultMargin, 0),
+      child: Text(
+        "New Arrivals",
+        style: primaryTextStyle.copyWith(fontSize: 22, fontWeight: semiBold),
+      ),
+    );
+  }
+
+  // New Arrivals Tiles
+  Widget newArrivals() {
+    return Container(
+      margin: EdgeInsets.only(top: 14),
+      child: Column(children: [ProductTile(), ProductTile(), ProductTile()]),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -183,6 +203,8 @@ class ShoesPage extends StatelessWidget {
           categories(),
           popularProductsTitle(),
           popularProducts(),
+          newArrivalsTitle(),
+          newArrivals(),
         ],
       ),
     );
