@@ -1,29 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/slicing/chatty/theme_chatty.dart';
 
-class ChatTile extends StatefulWidget {
-  const ChatTile({super.key});
+class ChatTile extends StatelessWidget {
+  // parameter ChatTile
+  final String imageUrl;
+  final String name;
+  final String message;
+  final String time;
 
-  @override
-  State<ChatTile> createState() => _ChatTileState();
-}
+  const ChatTile({
+    super.key,
+    required this.imageUrl,
+    required this.name,
+    required this.message,
+    required this.time,
+  });
 
-class _ChatTileState extends State<ChatTile> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Image.asset("assets/images/friend1.png", width: 60),
-        SizedBox(width: 12),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Joshuer", style: titleTextStyle),
-            Text("Sorry, you’re not my ty...", style: subTitleTextStyle),
-          ],
-        ),
-        Text("Now", style: subTitleTextStyle),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 16),
+      child: Row(
+        children: [
+          Image.asset(imageUrl, width: 60),
+          SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(name, style: titleTextStyle),
+                Text(
+                  message,
+                  style: subTitleTextStyle,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+          ),
+          Spacer(),
+          Text(time, style: subTitleTextStyle),
+        ],
+      ),
     );
   }
 }
