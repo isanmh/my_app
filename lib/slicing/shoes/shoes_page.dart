@@ -52,25 +52,108 @@ class ShoesPage extends StatelessWidget {
   // categories
   Widget categories() {
     return Container(
-      child: Row(
-        children: [
-          SizedBox(width: defaultMargin),
-          Container(
-            margin: EdgeInsets.only(right: 16),
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: primaryColor,
-            ),
-            child: Text(
-              "All Shoes",
-              style: primaryTextStyle.copyWith(
-                fontSize: 13,
-                fontWeight: semiBold,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            SizedBox(width: defaultMargin),
+            Container(
+              margin: EdgeInsets.only(right: 16),
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: primaryColor,
+              ),
+              child: Text(
+                "All Shoes",
+                style: primaryTextStyle.copyWith(
+                  fontSize: 13,
+                  fontWeight: semiBold,
+                ),
               ),
             ),
-          ),
-        ],
+            Container(
+              margin: EdgeInsets.only(right: 16),
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: transparentColor,
+                border: Border.all(color: secondaryColor),
+              ),
+              child: Text(
+                "Training",
+                style: secondaryTextStyle.copyWith(
+                  fontSize: 13,
+                  fontWeight: light,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 16),
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: transparentColor,
+                border: Border.all(color: secondaryColor),
+              ),
+              child: Text(
+                "Training",
+                style: secondaryTextStyle.copyWith(
+                  fontSize: 13,
+                  fontWeight: light,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 16),
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: transparentColor,
+                border: Border.all(color: secondaryColor),
+              ),
+              child: Text(
+                "Training",
+                style: secondaryTextStyle.copyWith(
+                  fontSize: 13,
+                  fontWeight: light,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 16),
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: transparentColor,
+                border: Border.all(color: secondaryColor),
+              ),
+              child: Text(
+                "Training",
+                style: secondaryTextStyle.copyWith(
+                  fontSize: 13,
+                  fontWeight: light,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 16),
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: transparentColor,
+                border: Border.all(color: secondaryColor),
+              ),
+              child: Text(
+                "Training",
+                style: secondaryTextStyle.copyWith(
+                  fontSize: 13,
+                  fontWeight: light,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -14,6 +14,7 @@ Color subTextColor = Color(0xff999999);
 
 // bg color
 Color backgroundColor = Color(0xff1F1D2B);
+Color transparentColor = Colors.transparent;
 
 // text style
 TextStyle primaryTextStyle = GoogleFonts.poppins(color: primaryTextColor);
