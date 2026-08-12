@@ -17,6 +17,7 @@ class ProductCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(height: defaultMargin),
           Image.asset(
             "assets/images/shoes1.png",
             fit: BoxFit.cover,
