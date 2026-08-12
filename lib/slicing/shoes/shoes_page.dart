@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/slicing/chatty/theme_chatty.dart';
 import 'package:my_app/slicing/shoes/theme_shoes.dart';
+import 'package:my_app/widgets/product_card.dart';
 
 class ShoesPage extends StatelessWidget {
   const ShoesPage({super.key});
@@ -144,7 +145,7 @@ class ShoesPage extends StatelessWidget {
   }
 
   // popular Products
-  Widget popularProducts() {
+  Widget popularProductsTitle() {
     return Container(
       margin: EdgeInsets.fromLTRB(defaultMargin, 30, defaultMargin, 0),
       child: Text(
@@ -154,11 +155,36 @@ class ShoesPage extends StatelessWidget {
     );
   }
 
+  // productCard
+  Widget popularProducts() {
+    return Container(
+      margin: EdgeInsets.only(top: 14),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            SizedBox(width: defaultMargin),
+            ProductCard(),
+            ProductCard(),
+            ProductCard(),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: ListView(children: [header(), categories(), popularProducts()]),
+      body: ListView(
+        children: [
+          header(),
+          categories(),
+          popularProductsTitle(),
+          popularProducts(),
+        ],
+      ),
     );
   }
 }
