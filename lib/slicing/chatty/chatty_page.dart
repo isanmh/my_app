@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/slicing/chatty/theme_chatty.dart';
+import 'package:my_app/widgets/chat_tile.dart';
 
 class ChattyPage extends StatelessWidget {
   const ChattyPage({super.key});
@@ -44,23 +45,8 @@ class ChattyPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Friends", style: titleTextStyle),
-                    Row(
-                      children: [
-                        Image.asset("assets/images/friend1.png", width: 60),
-                        SizedBox(width: 12),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Joshuer", style: titleTextStyle),
-                            Text(
-                              "Sorry, you’re not my ty...",
-                              style: subTitleTextStyle,
-                            ),
-                          ],
-                        ),
-                        Text("Now", style: subTitleTextStyle),
-                      ],
-                    ),
+                    ChatTile(),
+                    ChatTile(),
                   ],
                 ),
               ),
