@@ -11,24 +11,38 @@ class ShoesPage extends StatelessWidget {
       margin: EdgeInsets.all(defaultMargin),
       child: Row(
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Hai, Ihsan Miftahul Huda",
-                style: primaryTextStyle.copyWith(
-                  fontSize: 24,
-                  fontWeight: semiBold,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Hai, Ihsan Miftahul Hudassss",
+                  style: primaryTextStyle.copyWith(
+                    fontSize: 24,
+                    fontWeight: semiBold,
+                  ),
+                  maxLines: 1,
                 ),
-              ),
-              Text(
-                "@isanz_mh",
-                style: secondaryTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: regular,
+                Text(
+                  "@isanz_mh",
+                  style: secondaryTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: regular,
+                  ),
                 ),
+              ],
+            ),
+          ),
+
+          Container(
+            width: 54,
+            height: 54,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                image: AssetImage("assets/images/friend1.png"),
               ),
-            ],
+            ),
           ),
         ],
       ),
