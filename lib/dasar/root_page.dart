@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/dasar/clip_rect.dart';
 import 'package:my_app/dasar/menu_page.dart';
+import 'package:my_app/slicing/chatty/chatty_page.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({super.key});
@@ -13,7 +14,11 @@ class _RootPageState extends State<RootPage> {
   // ini untuk navbar
   int currentPage = 0;
   // widget list untuk navbar
-  List<Widget> pages = [MenuPage(), ClipRectExample()];
+  List<Widget> pages = [
+    // MenuPage(),
+    ChattyPage(),
+    ClipRectExample(),
+  ];
 
   @override
   Widget build(BuildContext context) {
