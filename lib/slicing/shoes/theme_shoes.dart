@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // theme Color
 Color primaryColor = Color(0xff6C5ECF);
@@ -15,3 +16,16 @@ Color subTextColor = Color(0xff999999);
 Color backgroundColor = Color(0xff1F1D2B);
 
 // text style
+TextStyle primaryTextStyle = GoogleFonts.poppins(color: primaryTextColor);
+TextStyle secondaryTextStyle = GoogleFonts.poppins(color: secondaryTextColor);
+TextStyle subTextStyle = GoogleFonts.poppins(color: subTextColor);
+TextStyle priceTextStyle = GoogleFonts.poppins(color: priceColor);
+TextStyle blackTextStyle = GoogleFonts.poppins(color: blackColor);
+
+// font weight
+FontWeight light = FontWeight.w300;
+FontWeight regular = FontWeight.w400;
+FontWeight semiBold = FontWeight.w600;
+
+// margin global
+double defaultMargin = 30.0;
