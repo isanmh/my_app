@@ -17,7 +17,7 @@ class ProductTile extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Image.asset(
-              "assets/images/shoes1.png",
+              "assets/images/shoes5.png",
               width: 120,
               height: 120,
               fit: BoxFit.cover,
@@ -30,15 +30,12 @@ class ProductTile extends StatelessWidget {
               children: [
                 Text(
                   "Hiking",
-                  style: secondaryTextStyle.copyWith(
-                    fontSize: 12,
-                    fontWeight: light,
-                  ),
+                  style: subTextStyle.copyWith(fontSize: 12, fontWeight: light),
                 ),
                 SizedBox(height: 6),
                 Text(
-                  "TERREX URBAN LOW",
-                  style: blackTextStyle.copyWith(
+                  "Predator 20.3 Firm Ground",
+                  style: primaryTextStyle.copyWith(
                     fontSize: 16,
                     fontWeight: semiBold,
                   ),

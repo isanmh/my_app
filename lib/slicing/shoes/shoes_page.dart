@@ -165,9 +165,7 @@ class ShoesPage extends StatelessWidget {
         child: Row(
           children: [
             SizedBox(width: defaultMargin),
-            ProductCard(),
-            ProductCard(),
-            ProductCard(),
+            for (int i = 0; i < 4; i++) ProductCard(),
           ],
         ),
       ),
@@ -189,7 +187,7 @@ class ShoesPage extends StatelessWidget {
   Widget newArrivals() {
     return Container(
       margin: EdgeInsets.only(top: 14),
-      child: Column(children: [ProductTile(), ProductTile(), ProductTile()]),
+      child: Column(children: [for (int i = 0; i < 4; i++) ProductTile()]),
     );
   }
 
