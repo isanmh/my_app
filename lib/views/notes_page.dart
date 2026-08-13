@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/models/note_model.dart';
+import 'package:my_app/services/note_service.dart';
 
 class NotesPage extends StatefulWidget {
   const NotesPage({super.key});
@@ -9,7 +11,23 @@ class NotesPage extends StatefulWidget {
 
 class _NotesPageState extends State<NotesPage> {
   bool isLoading = true;
-  List<String> _listNotes = ["Note 1", "Note 2", "Note 3"];
+  List<Notes> _listNotes = [];
+  NoteService noteService = NoteService();
+
+  // fetch notes from api
+  show() async {
+    _listNotes = await noteService.getData();
+    setState(() {
+      isLoading = false;
+      _listNotes = _listNotes;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    show();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +49,7 @@ class _NotesPageState extends State<NotesPage> {
         onRefresh: () {
           return Future.delayed(const Duration(seconds: 1), () {
             setState(() {
-              _listNotes = ["Note 1", "Note 2", "Note 3"];
+              _listNotes = _listNotes;
             });
           });
         },
