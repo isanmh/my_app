@@ -27,4 +27,24 @@ class ChattyService {
 
     throw Exception('Gagal memuat data chatty');
   }
+
+  // https://dummyjson.com/docs/products json group
+  Future<List<ChattyModel>> getChatGroups() async {
+    final response = await http.get(
+      Uri.parse('https://dummyjson.com/products'),
+      headers: {'Content-Type': 'application/json'},
+    );
+    // debug
+    print("Status Code: ${response.statusCode}");
+    print("BODY: ${response.body}");
+    // cek status code
+    if (response.statusCode == 200) {
+      final jsonData = jsonDecode(response.body);
+      final List<dynamic> data = jsonData['products'];
+
+      return data.map((json) => ChattyModel.fromJsonGroup(json)).toList();
+    }
+
+    throw Exception('Gagal memuat data chatty');
+  }
 }

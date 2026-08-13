@@ -14,6 +14,7 @@ class ChattyApi extends StatefulWidget {
 class _ChattyApiState extends State<ChattyApi> {
   // chat model list
   List<ChattyModel> chatList = [];
+  List<ChattyModel> chatGroups = [];
   bool isLoading = true;
 
   // service instance
@@ -37,6 +38,18 @@ class _ChattyApiState extends State<ChattyApi> {
           setState(() {
             isLoading = false;
           });
+        });
+
+    // groups
+    chattyService
+        .getChatGroups()
+        .then((res) {
+          setState(() {
+            chatGroups = res;
+          });
+        })
+        .catchError((error) {
+          print("gagal memuat data groups: $error");
         });
   }
 
@@ -109,14 +122,17 @@ class _ChattyApiState extends State<ChattyApi> {
                       SizedBox(height: 30),
                       Text("Groups", style: titleTextStyle),
                       // looping ChatTile
-                      for (var i = 0; i < 2; i++)
-                        ChatTile(
-                          imageUrl: "assets/images/group1.png",
-                          name: "Jakarta Fair",
-                          message: "Why does everyone ca...",
-                          time: "11:11",
-                          unread: true,
-                        ),
+                      if (chatGroups.isEmpty)
+                        Center(child: CircularProgressIndicator())
+                      else
+                        for (var group in chatGroups)
+                          ChatTile(
+                            imageUrl: group.imageUrl,
+                            name: group.name,
+                            message: group.message,
+                            time: group.time,
+                            unread: group.unread,
+                          ),
                     ],
                   ),
                 ),
