@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/services/note_service.dart';
+import 'package:my_app/utils/contanst.dart';
 
 class EditNote extends StatefulWidget {
   const EditNote({super.key});
@@ -8,6 +10,8 @@ class EditNote extends StatefulWidget {
 }
 
 class _EditNoteState extends State<EditNote> {
+  NoteService noteService = NoteService();
+
   final titleController = TextEditingController();
   final contentController = TextEditingController();
   // validasi
@@ -16,6 +20,15 @@ class _EditNoteState extends State<EditNote> {
 
   @override
   Widget build(BuildContext context) {
+    // tambahkan arguments
+    final args = ModalRoute.of(context)!.settings.arguments as List<String>;
+
+    // jika args ada
+    if (args.isNotEmpty) {
+      titleController.text = args[1];
+      contentController.text = args[2];
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Update Note"),
@@ -58,11 +71,22 @@ class _EditNoteState extends State<EditNote> {
                         : validateContent = false;
                   });
 
-                  // add string to list
-                  if (titleController.text.isNotEmpty &&
-                      contentController.text.isNotEmpty) {
-                    // add to list
-                    Navigator.pop(context);
+                  if (validateTitle == false && validateContent == false) {
+                    bool response = await noteService.putData(
+                      args[0],
+                      titleController.text,
+                      contentController.text,
+                    );
+                    if (response) {
+                      showSnackBar(context, "Note berhasil diupdate");
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        "/notes",
+                        (route) => false,
+                      );
+                    } else {
+                      showSnackBar(context, "Note gagal diupdate");
+                    }
                   }
                 },
                 child: Text("Update Note"),
