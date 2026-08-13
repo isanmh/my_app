@@ -1,5 +1,3 @@
-import 'package:my_app/widgets/chat_tile.dart';
-
 class ChattyModel {
   final String imageUrl;
   final String name;
@@ -24,6 +22,20 @@ class ChattyModel {
         message: "Sorry, you’re not my type.",
         time: "Now",
         unread: false,
+      ),
+      ChattyModel(
+        imageUrl: "assets/images/friend2.png",
+        name: "Gabriella",
+        message: "I saw it clearly and might...",
+        time: "Now",
+        unread: true,
+      ),
+      ChattyModel(
+        imageUrl: "assets/images/friend2.png",
+        name: "Gabriella",
+        message: "I saw it clearly and might...",
+        time: "Now",
+        unread: true,
       ),
       ChattyModel(
         imageUrl: "assets/images/friend2.png",

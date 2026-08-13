@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/models/chatty_model.dart';
 import 'package:my_app/slicing/chatty/theme_chatty.dart';
 import 'package:my_app/widgets/chat_tile.dart';
 
@@ -56,13 +57,14 @@ class ChattyApi extends StatelessWidget {
                     children: [
                       Text("Friends", style: titleTextStyle),
                       // looping ChatTile
-                      for (var i = 0; i < 2; i++)
+                      // for (var i = 0; i < 2; i++)
+                      for (var chat in ChattyModel.chatlist())
                         ChatTile(
-                          imageUrl: "assets/images/friend1.png",
-                          name: "Joshuer",
-                          message: "Sorry, you’re not my type.",
-                          time: "Now",
-                          unread: false,
+                          imageUrl: chat.imageUrl,
+                          name: chat.name,
+                          message: chat.message,
+                          time: chat.time,
+                          unread: chat.unread,
                         ),
                       SizedBox(height: 30),
                       Text("Groups", style: titleTextStyle),
