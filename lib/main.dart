@@ -3,6 +3,7 @@ import 'package:my_app/dasar/clip_rect.dart';
 import 'package:my_app/dasar/dasar_page.dart';
 import 'package:my_app/dasar/menu_page.dart';
 import 'package:my_app/dasar/root_page.dart';
+import 'package:my_app/navbar/google_navbar.dart';
 import 'package:my_app/slicing/chatty/chatty_page.dart';
 import 'package:my_app/slicing/shoes/shoes_page.dart';
 import 'package:my_app/views/add_note.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(fontFamily: 'Poppins'),
       // routes
       routes: {
-        '/': (context) => const NotesPage(),
+        '/': (context) => const GoogleNavbar(),
         '/root': (context) => const RootPage(),
         '/dasar': (context) => const DasarPage(),
         '/clip': (context) => const ClipRectExample(),
