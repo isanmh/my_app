@@ -37,13 +37,17 @@ class ChattyModel {
         time: "Now",
         unread: true,
       ),
-      ChattyModel(
-        imageUrl: "assets/images/friend2.png",
-        name: "Gabriella",
-        message: "I saw it clearly and might...",
-        time: "Now",
-        unread: true,
-      ),
     ];
+  }
+
+  // pemangilan api
+  factory ChattyModel.fromJson(Map<String, dynamic> json) {
+    return ChattyModel(
+      imageUrl: json['avatar'],
+      name: json['first_name'] + " " + json['last_name'],
+      message: json['email'],
+      time: "Now",
+      unread: false,
+    );
   }
 }
