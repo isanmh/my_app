@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/models/note_model.dart';
 import 'package:my_app/services/note_service.dart';
+import 'package:my_app/utils/contanst.dart';
 
 class AddNote extends StatefulWidget {
   const AddNote({super.key});
@@ -67,8 +68,18 @@ class _AddNoteState extends State<AddNote> {
                       titleController.text,
                       contentController.text,
                     );
+                    if (response) {
+                      showSnackBar(context, "Note berhasil ditambahkan");
+                      // Navigator.pop(context);
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        "/notes",
+                        (route) => false,
+                      );
+                    } else {
+                      showSnackBar(context, "Gagal menambahkan note");
+                    }
                     // add to list
-                    Navigator.pop(context);
                   }
                 },
                 child: Text("Add Note"),
