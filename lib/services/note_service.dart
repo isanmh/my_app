@@ -56,4 +56,16 @@ class NoteService {
   }
 
   // delete
+  Future deleteData(String id) async {
+    try {
+      final response = await http.delete(Uri.parse('$notesUrl/$id'));
+      if (response.statusCode == 200) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+  }
 }
