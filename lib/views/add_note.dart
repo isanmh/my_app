@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/models/note_model.dart';
+import 'package:my_app/services/note_service.dart';
 
 class AddNote extends StatefulWidget {
   const AddNote({super.key});
@@ -8,6 +10,8 @@ class AddNote extends StatefulWidget {
 }
 
 class _AddNoteState extends State<AddNote> {
+  NoteService noteService = NoteService();
+
   final titleController = TextEditingController();
   final contentController = TextEditingController();
   // validasi
@@ -57,10 +61,12 @@ class _AddNoteState extends State<AddNote> {
                         ? validateContent = true
                         : validateContent = false;
                   });
-
-                  // add string to list
-                  if (titleController.text.isNotEmpty &&
-                      contentController.text.isNotEmpty) {
+                  // validasi
+                  if (validateTitle == false && validateContent == false) {
+                    bool response = await noteService.postData(
+                      titleController.text,
+                      contentController.text,
+                    );
                     // add to list
                     Navigator.pop(context);
                   }

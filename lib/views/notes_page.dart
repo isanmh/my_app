@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/models/note_model.dart';
 import 'package:my_app/services/note_service.dart';
+import 'package:my_app/utils/contanst.dart';
 
 class NotesPage extends StatefulWidget {
   const NotesPage({super.key});
@@ -95,6 +96,7 @@ class _NotesPageState extends State<NotesPage> {
                                 );
                                 Navigator.pop(context);
                                 show();
+                                showSnackBar(context, "Note berhasil dihapus");
                               },
                               child: Text("Delete"),
                             ),

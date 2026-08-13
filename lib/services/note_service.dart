@@ -22,11 +22,11 @@ class NoteService {
   }
 
   // post
-  Future postData(Notes note) async {
+  Future postData(String title, String content) async {
     try {
       final response = await http.post(
         Uri.parse(notesUrl),
-        body: {'title': note.title, 'content': note.content},
+        body: {'title': title, 'content': content},
       );
       if (response.statusCode == 201) {
         return true;
@@ -39,11 +39,11 @@ class NoteService {
   }
 
   // put
-  Future putData(Notes note) async {
+  Future putData(String id, String title, String content) async {
     try {
       final response = await http.put(
-        Uri.parse('$notesUrl/${note.id}'),
-        body: {'title': note.title, 'content': note.content},
+        Uri.parse('$notesUrl/$id'),
+        body: {'title': title, 'content': content},
       );
       if (response.statusCode == 200) {
         return true;
