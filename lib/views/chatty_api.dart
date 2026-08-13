@@ -1,10 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/models/chatty_model.dart';
+import 'package:my_app/services/chatty_service.dart';
 import 'package:my_app/slicing/chatty/theme_chatty.dart';
 import 'package:my_app/widgets/chat_tile.dart';
 
-class ChattyApi extends StatelessWidget {
+class ChattyApi extends StatefulWidget {
   const ChattyApi({super.key});
+
+  @override
+  State<ChattyApi> createState() => _ChattyApiState();
+}
+
+class _ChattyApiState extends State<ChattyApi> {
+  // chat model list
+  List<ChattyModel> chatList = [];
+  bool isLoading = true;
+
+  // service instance
+  final ChattyService chattyService = ChattyService();
+
+  // constractor
+  @override
+  void initState() {
+    super.initState();
+
+    chattyService
+        .getChatList()
+        .then((res) {
+          setState(() {
+            chatList = res;
+            isLoading = false;
+          });
+        })
+        .catchError((error) {
+          print("gagal memuat data: $error");
+          setState(() {
+            isLoading = false;
+          });
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
