@@ -62,13 +62,13 @@ class _NotesPageState extends State<NotesPage> {
                   Navigator.pushNamed(context, "/edit_note");
                 },
                 title: Text(
-                  _listNotes[index].toString(),
+                  _listNotes[index].title,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 subtitle: Text(
-                  _listNotes[index].toString(),
+                  _listNotes[index].content,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -89,11 +89,12 @@ class _NotesPageState extends State<NotesPage> {
                               child: Text("Cancel"),
                             ),
                             TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  _listNotes.removeAt(index);
-                                });
+                              onPressed: () async {
+                                await noteService.deleteData(
+                                  _listNotes[index].id,
+                                );
                                 Navigator.pop(context);
+                                show();
                               },
                               child: Text("Delete"),
                             ),
