@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(fontFamily: 'Poppins'),
       // routes
       routes: {
-        '/': (context) => const ChattyApi(),
+        '/': (context) => const NotesPage(),
         '/root': (context) => const RootPage(),
         '/dasar': (context) => const DasarPage(),
         '/clip': (context) => const ClipRectExample(),
