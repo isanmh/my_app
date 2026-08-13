@@ -108,6 +108,15 @@ class _ChattyApiState extends State<ChattyApi> {
 
                       SizedBox(height: 30),
                       Text("Groups", style: titleTextStyle),
+                      // looping ChatTile
+                      for (var i = 0; i < 2; i++)
+                        ChatTile(
+                          imageUrl: "assets/images/group1.png",
+                          name: "Jakarta Fair",
+                          message: "Why does everyone ca...",
+                          time: "11:11",
+                          unread: true,
+                        ),
                     ],
                   ),
                 ),

@@ -50,4 +50,15 @@ class ChattyModel {
       unread: false,
     );
   }
+
+  // pemangilan api https://dummyjson.com/docs/products
+  factory ChattyModel.fromJsonGroup(Map<String, dynamic> json) {
+    return ChattyModel(
+      imageUrl: json['thumbnail'],
+      name: json['title'],
+      message: json['description'],
+      time: "Now",
+      unread: false,
+    );
+  }
 }
