@@ -3,10 +3,11 @@ import 'dart:convert';
 
 import 'package:my_app/models/album_model.dart';
 import 'package:http/http.dart' as http;
+import 'package:my_app/utils/contanst.dart';
 
 Future<Album> fetchAlbum() async {
   final response = await http.get(
-    Uri.parse('https://jsonplaceholder.typicode.com/albums/2'),
+    Uri.parse(albumUrl),
     headers: {'Accept': 'application/json'},
   );
 

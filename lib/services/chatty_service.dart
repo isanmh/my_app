@@ -2,12 +2,13 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:my_app/models/chatty_model.dart';
+import 'package:my_app/utils/contanst.dart';
 
 class ChattyService {
   // get Chatty from Reqresin
   Future<List<ChattyModel>> getChatList() async {
     final response = await http.get(
-      Uri.parse('https://reqres.in/api/users'),
+      Uri.parse(reqURl),
       headers: {
         'Content-Type': 'application/json',
         // api sendiri
@@ -31,7 +32,7 @@ class ChattyService {
   // https://dummyjson.com/docs/products json group
   Future<List<ChattyModel>> getChatGroups() async {
     final response = await http.get(
-      Uri.parse('https://dummyjson.com/products'),
+      Uri.parse(groupUrl),
       headers: {'Content-Type': 'application/json'},
     );
     // debug
