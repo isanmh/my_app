@@ -47,13 +47,7 @@ class _NotesPageState extends State<NotesPage> {
         ],
       ),
       body: RefreshIndicator(
-        onRefresh: () {
-          return Future.delayed(const Duration(seconds: 1), () {
-            setState(() {
-              _listNotes = _listNotes;
-            });
-          });
-        },
+        onRefresh: () => show(),
         child: ListView.builder(
           itemCount: _listNotes.length,
           itemBuilder: (context, index) {
