@@ -92,14 +92,20 @@ class _ChattyApiState extends State<ChattyApi> {
                       Text("Friends", style: titleTextStyle),
                       // looping ChatTile
                       // for (var i = 0; i < 2; i++)
-                      for (var chat in ChattyModel.chatlist())
-                        ChatTile(
-                          imageUrl: chat.imageUrl,
-                          name: chat.name,
-                          message: chat.message,
-                          time: chat.time,
-                          unread: chat.unread,
-                        ),
+                      // dari api
+                      // jika data kosong, tampilkan loading
+                      if (chatList.isEmpty)
+                        Center(child: CircularProgressIndicator())
+                      else
+                        for (var chat in chatList)
+                          ChatTile(
+                            imageUrl: chat.imageUrl,
+                            name: chat.name,
+                            message: chat.message,
+                            time: chat.time,
+                            unread: chat.unread,
+                          ),
+
                       SizedBox(height: 30),
                       Text("Groups", style: titleTextStyle),
                     ],
