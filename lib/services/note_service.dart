@@ -22,6 +22,38 @@ class NoteService {
   }
 
   // post
+  Future postData(Notes note) async {
+    try {
+      final response = await http.post(
+        Uri.parse(notesUrl),
+        body: {'title': note.title, 'content': note.content},
+      );
+      if (response.statusCode == 201) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
   // put
+  Future putData(Notes note) async {
+    try {
+      final response = await http.put(
+        Uri.parse('$notesUrl/${note.id}'),
+        body: {'title': note.title, 'content': note.content},
+      );
+      if (response.statusCode == 200) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
   // delete
 }
