@@ -7,6 +7,7 @@ import 'package:my_app/slicing/chatty/chatty_page.dart';
 import 'package:my_app/slicing/shoes/shoes_page.dart';
 import 'package:my_app/views/add_note.dart';
 import 'package:my_app/views/album_page.dart';
+import 'package:my_app/views/chatty_api.dart';
 import 'package:my_app/views/edit_note.dart';
 import 'package:my_app/views/notes_page.dart';
 
@@ -27,11 +28,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(fontFamily: 'Poppins'),
       // routes
       routes: {
-        '/': (context) => const AlbumPage(),
+        '/': (context) => const ChattyApi(),
         '/root': (context) => const RootPage(),
         '/dasar': (context) => const DasarPage(),
         '/clip': (context) => const ClipRectExample(),
-        '/chatty': (context) => const ChattyPage(),
+        '/chatty': (context) => const ChattyApi(),
         '/shoes': (context) => const ShoesPage(),
 
         // notes routes
